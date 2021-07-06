@@ -12,7 +12,7 @@ function App() {
   //   USE_PROFILES: { html: true },
   // }); // line break will not reset
 
-  const convertedMarkdown = DOMPurify.sanitize(markdown.replace(/\*\*\*(.*?)\*\*\*/gm, '<i>$1</i>').replace(/\*\*(.*?)\*\*/gm, '<b>$1</b>').replace(/_(.*?)_/gm, '<u>$1</u>').replace(/\n/g, "<br>"), {
+  const convertedMarkdown = DOMPurify.sanitize(markdown.replace(/\*\*\*(.+?)\*\*\*/gm, '<i>$1</i>').replace(/\*\*(.+?)\*\*/gm, '<b>$1</b>').replace(/_(.+?)_/gm, '<u>$1</u>').replace(/\n/g, "<br>"), {
     USE_PROFILES: { html: true },
   }); // line break will reset 
 
